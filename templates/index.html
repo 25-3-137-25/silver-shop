@@ -1,58 +1,99 @@
 {% extends "base.html" %}
 
+{% block title %}
+quite good. — Серебряные украшения
+{% endblock %}
+
+
 {% block content %}
+
 <section class="hero">
-    <div class="container hero-content">
-        <span class="hero-subtitle">Архитектурная форма & Серебро 925</span>
-        <h1 class="hero-title">Красота в выверенной простоте.</h1>
-        <p class="hero-text">Украшения с характером, созданные для тех, кто ценит фактуру, чистый металл и визуальный минимализм.</p>
-        <div class="hero-actions">
-            <a href="#catalog" class="btn btn-primary">Смотреть коллекцию</a>
-        </div>
+
+    <div class="container">
+
+        <p class="small-text">
+            СЕРЕБРО 925
+        </p>
+
+        <h1>
+            Украшения,<br>
+            которые просто<br>
+            нравятся.
+        </h1>
+
+        <p class="hero-text">
+            Минималистичные украшения из серебра
+            для повседневного образа.
+        </p>
+
+        <a href="{{ url_for('catalog') }}" class="button">
+            Смотреть каталог
+        </a>
+
     </div>
+
 </section>
 
-<section class="catalog container" id="catalog">
-    <div class="section-head">
-        <h2>Избранные изделия</h2>
-        <div class="filters">
-            <button class="filter-btn active">Все</button>
-            <button class="filter-btn">Кольца</button>
-            <button class="filter-btn">Серьги</button>
-            <button class="filter-btn">Цепи</button>
-        </div>
+
+<section class="section container">
+
+    <div class="section-title">
+
+        <h2>Избранное</h2>
+
+        <a href="{{ url_for('catalog') }}">
+            Смотреть всё →
+        </a>
+
     </div>
+
 
     <div class="product-grid">
-        {% for item in products %}
+
+        {% for item in products[:3] %}
+
         <article class="product-card">
-            <div class="product-image-wrap">
-                <div class="product-placeholder">
-                    <span>925 / Ag</span>
-                </div>
-                <span class="badge">{{ item.tag }}</span>
+
+            <div class="product-image">
+                <span>Фото товара</span>
             </div>
-            <div class="product-meta">
-                <span class="category">{{ item.category }}</span>
-                <h3 class="product-title">{{ item.title }}</h3>
-                <div class="product-footer">
-                    <span class="price">{{ item.price }}</span>
-                    <button class="add-to-cart-btn" title="Добавить в корзину">+</button>
-                </div>
+
+            <div class="product-info">
+
+                <p class="category">
+                    {{ item.category }}
+                </p>
+
+                <h3>
+                    {{ item.title }}
+                </h3>
+
+                <p class="price">
+                    {{ item.price }}
+                </p>
+
             </div>
+
         </article>
+
         {% endfor %}
+
     </div>
+
 </section>
 
-<section class="about" id="about">
-    <div class="container about-inner">
-        <div class="about-tagline">
-            <h3>Холодный блеск.<br>Безупречная форма.</h3>
-        </div>
-        <div class="about-body">
-            <p>Мы работаем исключительно с серебром высокой пробы, исследуя контраст между матовыми гранями и глянцевыми поверхностями. Каждое изделие отполировано вручную, чтобы подчеркнуть естественную глубину металла.</p>
-        </div>
+
+<section class="simple-block">
+
+    <div class="container">
+
+        <h2>
+            Серебро.<br>
+            Ничего лишнего.
+        </h2>
+
     </div>
+
 </section>
+
 {% endblock %}

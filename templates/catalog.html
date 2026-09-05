@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+Каталог — quite good.
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-title container">
+
+    <p class="small-text">
+        QUITE GOOD.
+    </p>
+
+    <h1>Каталог</h1>
+
+    <p>
+        Серебряные украшения 925 пробы.
+    </p>
+
+</section>
+
+
+<section class="section container">
+
+    <div class="product-grid">
+
+        {% for item in products %}
+
+        <article class="product-card">
+
+            <div class="product-image">
+                <span>Фото товара</span>
+            </div>
+
+            <div class="product-info">
+
+                <p class="category">
+                    {{ item.category }}
+                </p>
+
+                <h3>
+                    {{ item.title }}
+                </h3>
+
+                <p class="tag">
+                    {{ item.tag }}
+                </p>
+
+                <p class="price">
+                    {{ item.price }}
+                </p>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
