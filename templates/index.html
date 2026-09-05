@@ -55,7 +55,7 @@ quite good. — Серебряные украшения
         <article class="product-card">
 
             <div class="product-image">
-                <span>Фото товара</span>
+                <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}">
             </div>
 
             <div class="product-info">

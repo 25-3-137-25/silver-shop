@@ -10,6 +10,7 @@ PRODUCTS = [
         "category": "Кольца",
         "price": "5 400 ₽",
         "tag": "Серебро 925",
+        "image": "liqring.jpg",
     },
     {
         "id": 2,
@@ -17,6 +18,7 @@ PRODUCTS = [
         "category": "Серьги",
         "price": "3 800 ₽",
         "tag": "Серебро 925",
+        "image": "kaff.jpg",
     },
     {
         "id": 3,
@@ -24,13 +26,7 @@ PRODUCTS = [
         "category": "Цепи",
         "price": "8 200 ₽",
         "tag": "Черненое серебро",
-    },
-    {
-        "id": 4,
-        "title": "Браслет Structure",
-        "category": "Браслеты",
-        "price": "6 900 ₽",
-        "tag": "Серебро 925",
+        "image": "cep.jpg",
     },
 ]
 

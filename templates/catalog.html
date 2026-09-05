@@ -7,17 +7,21 @@
 
 {% block content %}
 
-<section class="page-title container">
+<section class="page-title catalog-title">
 
-    <p class="small-text">
-        QUITE GOOD.
-    </p>
+    <div class="container">
 
-    <h1>Каталог</h1>
+        <p class="small-text">
+            QUITE GOOD.
+        </p>
 
-    <p>
-        Серебряные украшения 925 пробы.
-    </p>
+        <h1>Каталог</h1>
+
+        <p>
+            Серебряные украшения 925 пробы.
+        </p>
+
+    </div>
 
 </section>
 
@@ -31,7 +35,7 @@
         <article class="product-card">
 
             <div class="product-image">
-                <span>Фото товара</span>
+                <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}">
             </div>
 
             <div class="product-info">

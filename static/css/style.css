@@ -14,6 +14,35 @@ body {
     line-height: 1.5;
 }
 
+.about-title {
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.65),
+            rgba(255, 255, 255, 0.65)
+        ),
+        url("../images/secondback.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.catalog-title {
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.65),
+            rgba(255, 255, 255, 0.65)
+        ),
+        url("../images/back.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
 
 a {
     color: inherit;
@@ -219,6 +248,16 @@ a {
     font-size: 13px;
 }
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    padding: 20px;
+}
 
 .product-info {
     padding: 18px;
