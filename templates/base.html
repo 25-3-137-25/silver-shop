@@ -3,55 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Flask Project{% endblock %}</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-        }
-        nav { margin-top: 10px; }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-        nav a:hover { text-decoration: underline; }
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: white;
-        }
-        footer {
-            max-width: 900px;
-            margin: 20px auto;
-            color: #777;
-        }
-    </style>
+    <title>{% block title %}QUITE GOOD. - Твое серебро{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">quite good<span>.</span></a>
+            <nav class="nav">
+                <a href="#catalog">Каталог</a>
+                <a href="#about">О бренде</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+            <div class="cart-trigger">
+                <span>Корзина (0)</span>
+            </div>
+        </div>
+    </header>
 
-<header>
-    <h1>Мой Flask-проект</h1>
-    <nav>
-        <a href="{{ url_for('index') }}">Главная</a>
-        <a href="{{ url_for('about') }}">О проекте</a>
-        <a href="{{ url_for('changelog') }}">Лог изменений</a>
-    </nav>
-</header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
-<main>
-    {% block content %}
-    {% endblock %}
-</main>
-
-<footer>Flask Project</footer>
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="logo">quite good<span>.</span></div>
+                <p>Лаконичная эстетика чистого серебра 925 пробы.</p>
+            </div>
+            <div class="footer-col links">
+                <a href="#">VK</a>
+                <a href="#">MAX</a>
+                <a href="#">Telegram</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 quite good. Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>

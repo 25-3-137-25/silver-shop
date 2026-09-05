@@ -1,11 +1,58 @@
 {% extends "base.html" %}
 
-{% block title %}
-Главная
-{% endblock %}
-
 {% block content %}
-<h2>Главная страница</h2>
-<p>Это главная страница учебного Flask-приложения.</p>
-<p>Проект демонстрирует создание маршрутов, использование HTML-шаблонов и организацию простого многостраничного веб-сайта.</p>
+<section class="hero">
+    <div class="container hero-content">
+        <span class="hero-subtitle">Архитектурная форма & Серебро 925</span>
+        <h1 class="hero-title">Красота в выверенной простоте.</h1>
+        <p class="hero-text">Украшения с характером, созданные для тех, кто ценит фактуру, чистый металл и визуальный минимализм.</p>
+        <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">Смотреть коллекцию</a>
+        </div>
+    </div>
+</section>
+
+<section class="catalog container" id="catalog">
+    <div class="section-head">
+        <h2>Избранные изделия</h2>
+        <div class="filters">
+            <button class="filter-btn active">Все</button>
+            <button class="filter-btn">Кольца</button>
+            <button class="filter-btn">Серьги</button>
+            <button class="filter-btn">Цепи</button>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        {% for item in products %}
+        <article class="product-card">
+            <div class="product-image-wrap">
+                <div class="product-placeholder">
+                    <span>925 / Ag</span>
+                </div>
+                <span class="badge">{{ item.tag }}</span>
+            </div>
+            <div class="product-meta">
+                <span class="category">{{ item.category }}</span>
+                <h3 class="product-title">{{ item.title }}</h3>
+                <div class="product-footer">
+                    <span class="price">{{ item.price }}</span>
+                    <button class="add-to-cart-btn" title="Добавить в корзину">+</button>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container about-inner">
+        <div class="about-tagline">
+            <h3>Холодный блеск.<br>Безупречная форма.</h3>
+        </div>
+        <div class="about-body">
+            <p>Мы работаем исключительно с серебром высокой пробы, исследуя контраст между матовыми гранями и глянцевыми поверхностями. Каждое изделие отполировано вручную, чтобы подчеркнуть естественную глубину металла.</p>
+        </div>
+    </div>
+</section>
 {% endblock %}

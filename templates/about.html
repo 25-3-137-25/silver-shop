@@ -1,19 +1,97 @@
 {% extends "base.html" %}
 
 {% block title %}
-О проекте
+О бренде — Quite Good
 {% endblock %}
-
-<nav>
-    <a href="{{ url_for('index') }}">Главная</a>
-    <a href="{{ url_for('about') }}">О проекте</a>
-    <a href="{{ url_for('changelog') }}">Лог изменений</a>
-</nav>
 
 
 {% block content %}
-<h2>О проекте</h2>
-<p>Данный проект создан с использованием языка программирования Python и веб-фреймворка Flask.</p>
-<p>Цель проекта заключается в изучении базовых принципов создания веб-приложений.</p>
-<p>В приложении реализовано несколько независимых маршрутов и используется система HTML-шаблонов Jinja.</p>
+
+<section class="page-hero">
+
+    <p class="eyebrow">ABOUT QUITE GOOD</p>
+
+    <h1>
+        Украшения,<br>
+        которым <em>не нужно</em><br>
+        объяснение.
+    </h1>
+
+</section>
+
+
+<section class="about-grid">
+
+    <div class="about-image">
+
+        <div class="image-placeholder">
+            <span>BRAND PHOTO</span>
+        </div>
+
+    </div>
+
+
+    <div class="about-text">
+
+        <p class="section-number">01 / OUR PHILOSOPHY</p>
+
+        <h2>
+            Less noise.<br>
+            More <em>you.</em>
+        </h2>
+
+        <p>
+            Quite Good — небольшой бренд украшений
+            из серебра 925 пробы.
+        </p>
+
+        <p>
+            Мы верим, что хорошее украшение
+            не должно быть громким. Оно просто
+            становится частью человека — каждый
+            день, независимо от времени и трендов.
+        </p>
+
+        <p>
+            Поэтому мы создаём минималистичные
+            формы, которые легко сочетать между
+            собой и носить годами.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="values">
+
+    <div class="value">
+        <span>01</span>
+        <h3>925 Silver</h3>
+        <p>
+            Используем серебро 925 пробы
+            в наших украшениях.
+        </p>
+    </div>
+
+    <div class="value">
+        <span>02</span>
+        <h3>Minimalism</h3>
+        <p>
+            Ничего лишнего. Только форма,
+            материал и внимание к деталям.
+        </p>
+    </div>
+
+    <div class="value">
+        <span>03</span>
+        <h3>Everyday</h3>
+        <p>
+            Украшения созданы для того,
+            чтобы их действительно носить.
+        </p>
+    </div>
+
+</section>
+
 {% endblock %}
