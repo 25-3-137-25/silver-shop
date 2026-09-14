@@ -373,6 +373,39 @@ a {
 }
 
 
+.filter-line {
+    margin-bottom: 25px;
+
+    font-size: 14px;
+
+    color: #888888;
+}
+
+
+form p {
+    margin-bottom: 20px;
+}
+
+
+form input,
+form select,
+form textarea {
+    width: 320px;
+
+    margin-top: 6px;
+    padding: 8px;
+
+    border: 1px solid #cccccc;
+}
+
+
+.form-error {
+    margin-bottom: 20px;
+
+    color: #aa5555;
+}
+
+
 /* FOOTER */
 
 .footer {

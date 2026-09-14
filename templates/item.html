@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if product %}{{ product.title }}{% else %}Нет такого товара{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-title catalog-title">
+
+    <div class="container">
+
+        {% if product %}
+        <p class="small-text">{{ product.category }}</p>
+        <h1>{{ product.title }}</h1>
+        {% else %}
+        <h1>Товар не найден</h1>
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<section class="section container">
+
+    {% if product %}
+
+    <div class="product-grid">
+        <article class="product-card">
+            <div class="product-image">
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.title }}">
+            </div>
+            <div class="product-info">
+                <p class="tag">{{ product.tag }}</p>
+                <p class="price">{{ product.price }}</p>
+            </div>
+        </article>
+    </div>
+
+    <p class="hero-text">{{ product.description }}</p>
+
+    <a href="{{ url_for('form') }}" class="button">Оставить заявку</a>
+    <p><a href="{{ url_for('catalog') }}">назад в каталог</a></p>
+
+    {% else %}
+
+    <p>Такого украшения нет.</p>
+    <a href="{{ url_for('catalog') }}" class="button">В каталог</a>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

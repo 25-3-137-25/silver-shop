@@ -28,35 +28,53 @@
 
 <section class="section container">
 
+    <p class="filter-line">
+        <a href="{{ url_for('catalog') }}">все</a>
+        ·
+        <a href="{{ url_for('catalog', cat='Кольца') }}">кольца</a>
+        ·
+        <a href="{{ url_for('catalog', cat='Серьги') }}">серьги</a>
+        ·
+        <a href="{{ url_for('catalog', cat='Цепи') }}">цепи</a>
+    </p>
+
+    {% if cat %}
+    <p class="filter-line">Сейчас: {{ cat }}</p>
+    {% endif %}
+
     <div class="product-grid">
 
         {% for item in products %}
 
         <article class="product-card">
 
-            <div class="product-image">
-                <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}">
-            </div>
+            <a href="{{ url_for('item', item_id=item.id) }}">
 
-            <div class="product-info">
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}">
+                </div>
 
-                <p class="category">
-                    {{ item.category }}
-                </p>
+                <div class="product-info">
 
-                <h3>
-                    {{ item.title }}
-                </h3>
+                    <p class="category">
+                        {{ item.category }}
+                    </p>
 
-                <p class="tag">
-                    {{ item.tag }}
-                </p>
+                    <h3>
+                        {{ item.title }}
+                    </h3>
 
-                <p class="price">
-                    {{ item.price }}
-                </p>
+                    <p class="tag">
+                        {{ item.tag }}
+                    </p>
 
-            </div>
+                    <p class="price">
+                        {{ item.price }}
+                    </p>
+
+                </div>
+
+            </a>
 
         </article>
 

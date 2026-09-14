@@ -54,25 +54,29 @@ quite good. — Серебряные украшения
 
         <article class="product-card">
 
-            <div class="product-image">
-                <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}">
-            </div>
+            <a href="{{ url_for('item', item_id=item.id) }}">
 
-            <div class="product-info">
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}">
+                </div>
 
-                <p class="category">
-                    {{ item.category }}
-                </p>
+                <div class="product-info">
 
-                <h3>
-                    {{ item.title }}
-                </h3>
+                    <p class="category">
+                        {{ item.category }}
+                    </p>
 
-                <p class="price">
-                    {{ item.price }}
-                </p>
+                    <h3>
+                        {{ item.title }}
+                    </h3>
 
-            </div>
+                    <p class="price">
+                        {{ item.price }}
+                    </p>
+
+                </div>
+
+            </a>
 
         </article>
 
